@@ -20,6 +20,12 @@ def get_currency(API_KEY, currency: str):
 currency_dict = get_currency(API_KEY, currency)[1]
 
 
+@bot.message_handler(commands=['help'])
+def send_help(message):
+    bot.send_message(
+        message.chat.id, 'Вы выбираете валюту из списка. Мы пришлём Вам курс к рублю на дату')
+
+
 @bot.message_handler(commands=['start'])
 def send_welcome(message):
     markup = types.InlineKeyboardMarkup()
