@@ -28,11 +28,6 @@ def send_welcome(message):
     for cur in currency_dict:
         if cur != 'RUB':
             markup.add(types.InlineKeyboardButton(cur, callback_data=cur))
-    # markup.add(types.InlineKeyboardButton("USD", callback_data="USD"))
-    # markup.add(types.InlineKeyboardButton("EUR", callback_data="EUR"))
-    # markup.add(types.InlineKeyboardButton("GBP", callback_data="GBP"))
-    # markup.add(types.InlineKeyboardButton("JPY", callback_data="JPY"))
-    # Добавьте больше валют, если необходимо
 
     bot.send_message(message.chat.id, "Выберите валюту:", reply_markup=markup)
 
