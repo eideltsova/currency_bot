@@ -10,7 +10,6 @@ ENV PATH="/app/telegram_bot/venv/bin:$PATH"
 COPY . /app/telegram_bot/
 WORKDIR /app/telegram_bot/
 
-RUN /bin/bash -c "ls -la && pwd"
 RUN pip install --upgrade pip && pip install -r requirements.txt
 
 CMD ["python", "main.py"]
