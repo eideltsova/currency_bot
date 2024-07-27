@@ -1,6 +1,5 @@
 FROM python:3.10.2
 
-USER root
 RUN mkdir -p /app/telegram_bot/
 RUN python -m venv /app/telegram_bot/venv
 
