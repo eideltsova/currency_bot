@@ -5,7 +5,6 @@ RUN python -m venv /app/telegram_bot/venv
 
 ENV PATH="/app/telegram_bot/venv/bin:$PATH"
 
-
 COPY . /app/telegram_bot/
 WORKDIR /app/telegram_bot/
 
