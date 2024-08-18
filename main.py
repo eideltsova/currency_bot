@@ -54,4 +54,4 @@ def callback_query(call):
         bot.send_message(call.message.chat.id, "Ошибка получения курса валют.")
 
 
-bot.polling()
+bot.polling(True)
