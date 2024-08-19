@@ -2,6 +2,7 @@ import telebot
 from telebot import types
 import requests as r
 import os
+import time
 
 API_KEY = os.environ.get('API_TOKEN')
 TOKEN = os.environ.get('BOT_TOKEN')
@@ -54,4 +55,14 @@ def callback_query(call):
         bot.send_message(call.message.chat.id, "Ошибка получения курса валют.")
 
 
-bot.polling(True)
+def start_bot():
+    while True:
+        try:
+            bot.polling(none_stop=True, interval=0, timeout=20)
+        except Exception as e:
+            print(f"Ошибка: {e}")
+            time.sleep(15)  # Задержка перед перезапуском
+
+
+if __name__ == "__main__":
+    start_bot()
